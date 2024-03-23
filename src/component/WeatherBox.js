@@ -6,7 +6,7 @@ const WeatherBox = ({weather}) => {
     const roundedMaxTemp = weather ? Math.round(weather.main.temp_max) : null;
     const roundedMinTemp = weather ? Math.round(weather.main.temp_min) : null;  
     const currentTime = weather ? weather.dt : null ;
-    const sunsetTime = weather ? weather.sys.sunset : null;
+    const sunsetTime = weather ? weather.sys.sunrise : null;
  
     // console.log(weather.weather[0].id);
     let weatherStatus = '';
@@ -27,7 +27,7 @@ const WeatherBox = ({weather}) => {
         weatherStatus = '해구름'; // 
         weatherImage = currentTime < sunsetTime ? '/images/moonIcon.png' : '/images/hazeIcon.png';
     }
-    console.log("서울시간" , currentTime, sunsetTime);
+    console.log("뉴욕" , currentTime < sunsetTime);
     
  
   return (
